@@ -1,4 +1,4 @@
-# [clamav](#clamav)
+# [Ansible role clamav](#clamav)
 
 Install and configure clamav on your system.
 
