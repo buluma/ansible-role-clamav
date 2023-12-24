@@ -1,10 +1,10 @@
-# [Ansible role clamav](#clamav)
+# Ansible role [clamav](https://galaxy.ansible.com/ui/standalone/roles/buluma/clamav/documentation)
 
 Install and configure clamav on your system.
 
-|GitHub|Version|Issues|Pull Requests|
-|------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-clamav/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-clamav/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-clamav.svg)](https://github.com/buluma/ansible-role-clamav/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-clamav.svg)](https://github.com/buluma/ansible-role-clamav/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-clamav.svg)](https://github.com/buluma/ansible-role-clamav/pulls/)|
+|GitHub|Version|Issues|Pull Requests|Downloads|
+|------|-------|------|-------------|---------|
+|[![github](https://github.com/buluma/ansible-role-clamav/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-clamav/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-clamav.svg)](https://github.com/buluma/ansible-role-clamav/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-clamav.svg)](https://github.com/buluma/ansible-role-clamav/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-clamav.svg)](https://github.com/buluma/ansible-role-clamav/pulls/)|[![Ansible Role](https://img.shields.io/ansible/role/d/buluma/clamav)](https://galaxy.ansible.com/ui/standalone/roles/buluma/clamav/documentation)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -109,13 +109,11 @@ If you find issues, please register them in [GitHub](https://github.com/buluma/a
 
 ## [License](#license)
 
-[Apache-2.0](https://github.com/buluma/ansible-role-clamav/blob/master/LICENSE).
+[Apache-2.0](https://github.com/buluma/ansible-role-clamav/blob/master/LICENSE)
 
 ## [Author Information](#author-information)
 
-[Michael Buluma](https://buluma.github.io/)
+[Shadow Walker](https://buluma.github.io/)
 
-
-### [Special Thanks](#special-thanks)
 
 Template inspired by [Robert de Bock](https://github.com/robertdebock)
