@@ -11,9 +11,9 @@
     name: "{{ clamav_packages }}"
     state: present
   notify:
-    - ensure logfiles exists
-    - stop clamav
-    - update virus definitions
+    - Ensure logfiles exists
+    - Stop clamav
+    - Update virus definitions
 
 - name: Manage selinux settings
   block:
@@ -40,9 +40,9 @@
         dest: /etc/my-clamd.te
         mode: "0640"
       notify:
-        - create selinux mod for clamav
-        - create selinux pp for clamav
-        - load selinux pp for clamav
+        - Create selinux mod for clamav
+        - Create selinux pp for clamav
+        - Load selinux pp for clamav
   when:
     - ansible_selinux is defined
     - ansible_selinux.status == "enabled"
@@ -71,7 +71,7 @@
     mode: "0640"
   loop: "{{ clamav_configuration }}"
   notify:
-    - restart clamav
+    - Restart clamav
 
 - name: check update virus definitions
   ansible.builtin.async_status:
