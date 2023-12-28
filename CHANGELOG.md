@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-clamav/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-clamav/compare/0.1.2...HEAD)
+
+**Closed issues:**
+
+- Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#9](https://github.com/buluma/ansible-role-clamav/issues/9)
+
 ## [0.1.2](https://github.com/buluma/ansible-role-clamav/tree/0.1.2) (2023-12-24)
 
 [Full Changelog](https://github.com/buluma/ansible-role-clamav/compare/0.1.1...0.1.2)
