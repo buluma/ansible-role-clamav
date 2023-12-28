@@ -16,6 +16,9 @@
     - Update virus definitions
 
 - name: Manage selinux settings
+  when:
+    - ansible_selinux is defined
+    - ansible_selinux.status == "enabled"
   block:
     - name: Allowing system virus scanning
       ansible.posix.seboolean:
@@ -43,9 +46,6 @@
         - Create selinux mod for clamav
         - Create selinux pp for clamav
         - Load selinux pp for clamav
-  when:
-    - ansible_selinux is defined
-    - ansible_selinux.status == "enabled"
 
 - name: Place freshclam.conf
   ansible.builtin.template:
@@ -74,6 +74,8 @@
     - Restart clamav
 
 - name: check update virus definitions
+  when:
+    - updatevirusdefinitions is defined
   ansible.builtin.async_status:
     jid: "{{ updatevirusdefinitions.ansible_job_id }}"
   register: clamav_job_result
@@ -81,8 +83,6 @@
     - clamav_job_result.finished
   retries: 15
   delay: 60
-  when:
-    - updatevirusdefinitions is defined
 
 - name: start and enable clamav service
   ansible.builtin.service:
