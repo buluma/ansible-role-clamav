@@ -73,7 +73,7 @@
   notify:
     - Restart clamav
 
-- name: check update virus definitions
+- name: Check update virus definitions
   when:
     - updatevirusdefinitions is defined
   ansible.builtin.async_status:
@@ -84,7 +84,7 @@
   retries: 15
   delay: 60
 
-- name: start and enable clamav service
+- name: Start and enable clamav service
   ansible.builtin.service:
     name: "{{ item }}"
     state: started
