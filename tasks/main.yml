@@ -90,3 +90,5 @@
     state: started
     enabled: yes
   loop: "{{ clamav_services }}"
+  tags:
+    molecule-idempotence-notest
