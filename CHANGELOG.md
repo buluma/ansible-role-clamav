@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Bump release-drafter/release-drafter from 5 to 6 [\#17](https://github.com/buluma/ansible-role-clamav/pull/17) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump release-drafter/release-drafter from 5 to 6 [\#16](https://github.com/buluma/ansible-role-clamav/pull/16) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [0.4.0](https://github.com/buluma/ansible-role-clamav/tree/0.4.0) (2024-01-20)
