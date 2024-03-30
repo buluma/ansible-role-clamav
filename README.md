@@ -17,6 +17,11 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
   become: true
   gather_facts: true
 
+  pre_tasks:
+    - name: Update apt cache.
+      apt: update_cache=true cache_valid_time=600
+      when: ansible_os_family == 'Debian'
+
   roles:
     - role: buluma.clamav
 ```
@@ -88,7 +93,6 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 |container|tags|
 |---------|----|
 |[Alpine](https://hub.docker.com/r/buluma/alpine)|all|
-|[Amazon](https://hub.docker.com/r/buluma/amazonlinux)|Candidate|
 |[EL](https://hub.docker.com/r/buluma/enterpriselinux)|8|
 |[Debian](https://hub.docker.com/r/buluma/debian)|all|
 |[Fedora](https://hub.docker.com/r/buluma/fedora)|all|
