@@ -11,19 +11,16 @@ galaxy_info:
     - name: Alpine
       versions:
         - all
-    # - name: Amazon
-    #   versions:
-    #     - Candidate
+    - name: Amazon
+      versions:
+        - Candidate
     - name: EL
       versions:
-        - "8"
+        - "9"
     - name: Debian
       versions:
         - all
     - name: Fedora
-      versions:
-        - all
-    - name: opensuse
       versions:
         - all
     - name: Ubuntu

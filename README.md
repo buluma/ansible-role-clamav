@@ -17,13 +17,10 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
   become: true
   gather_facts: true
 
-  pre_tasks:
-    - name: Update apt cache.
-      apt: update_cache=true cache_valid_time=600
-      when: ansible_os_family == 'Debian'
-
   roles:
     - role: buluma.clamav
+      freshclam_private_mirrors:
+        - https://www.danami.com/hotfix/clamav
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-clamav/blob/master/molecule/default/prepare.yml):
@@ -63,6 +60,13 @@ clamav_configuration:
   - line: "TCPSocket 10025"
   - line: "TCPAddr 127.0.0.1"
   - line: "LogFile /var/log/clamd.scan"
+
+# If you have local clamav mirrors (as recommended by ClamAV),
+# you will also need to define a list variable with your mirrors to add,
+# as the following example indicates:
+# freshclam_private_mirrors:
+#   - mirror1.mynetwork.com
+#   - mirror2.mynetwork.com
 ```
 
 ## [Requirements](#requirements)
@@ -93,10 +97,10 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 |container|tags|
 |---------|----|
 |[Alpine](https://hub.docker.com/r/buluma/alpine)|all|
-|[EL](https://hub.docker.com/r/buluma/enterpriselinux)|8|
+|[Amazon](https://hub.docker.com/r/buluma/amazonlinux)|Candidate|
+|[EL](https://hub.docker.com/r/buluma/enterpriselinux)|9|
 |[Debian](https://hub.docker.com/r/buluma/debian)|all|
 |[Fedora](https://hub.docker.com/r/buluma/fedora)|all|
-|[opensuse](https://hub.docker.com/r/buluma/opensuse)|all|
 |[Ubuntu](https://hub.docker.com/r/buluma/ubuntu)|all|
 
 The minimum version of Ansible required is 2.12, tests have been done to:

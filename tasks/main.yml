@@ -2,7 +2,8 @@
 # tasks file for clamav
 
 - name: Import assert.yml
-  ansible.builtin.import_tasks: assert.yml
+  ansible.builtin.import_tasks:
+    file: assert.yml
   run_once: true
   delegate_to: localhost
 
@@ -53,11 +54,28 @@
     dest: "{{ clamav_config_dir }}/freshclam.conf"
     mode: "{{ freshclam_mode }}"
 
+- name: Create pid directory
+  ansible.builtin.file:
+    path: /run/clamav/
+    state: directory
+    owner: "{{ clamav_owner }}"
+    group: "{{ clamav_group }}"
+    mode: "0755"
+
 - name: Create database directory
   ansible.builtin.file:
     path: "{{ clamav_database_directory }}"
     state: directory
     mode: "0755"
+
+- name: Download signatures
+  ansible.builtin.get_url:
+    url: "{{ freshclam_private_mirrors[0] }}/{{ item }}"
+    dest: "{{ clamav_database_directory }}/{{ item }}"
+    mode: "0644"
+  loop:
+    - main.cvd
+    - daily.cld
 
 - name: Flush handlers
   ansible.builtin.meta: flush_handlers
@@ -74,8 +92,6 @@
     - Restart clamav
 
 - name: Check update virus definitions
-  when:
-    - updatevirusdefinitions is defined
   ansible.builtin.async_status:
     jid: "{{ updatevirusdefinitions.ansible_job_id }}"
   register: clamav_job_result
@@ -83,6 +99,8 @@
     - clamav_job_result.finished
   retries: 15
   delay: 60
+  when:
+    - updatevirusdefinitions is defined
 
 - name: Start and enable clamav service
   ansible.builtin.service:
@@ -90,5 +108,3 @@
     state: started
     enabled: true
   loop: "{{ clamav_services }}"
-  tags:
-    molecule-idempotence-notest
