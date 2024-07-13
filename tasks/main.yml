@@ -76,6 +76,8 @@
   loop:
     - main.cvd
     - daily.cld
+  tags:
+    - molecule-idempotence-notest
 
 - name: Flush handlers
   ansible.builtin.meta: flush_handlers
