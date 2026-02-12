@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-clamav/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-clamav/compare/24.3.31...HEAD)
+
+**Closed issues:**
+
+- rebuild action [\#7](https://github.com/buluma/ansible-role-clamav/issues/7)
+
 ## [24.3.31](https://github.com/buluma/ansible-role-clamav/tree/24.3.31) (2024-03-30)
 
 [Full Changelog](https://github.com/buluma/ansible-role-clamav/compare/0.4.0...24.3.31)
