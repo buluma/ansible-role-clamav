@@ -6,6 +6,7 @@
 
 **Closed issues:**
 
+- Update action [\#8](https://github.com/buluma/ansible-role-clamav/issues/8)
 - rebuild action [\#7](https://github.com/buluma/ansible-role-clamav/issues/7)
 
 ## [24.3.31](https://github.com/buluma/ansible-role-clamav/tree/24.3.31) (2024-03-30)
