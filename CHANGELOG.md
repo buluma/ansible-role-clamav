@@ -9,6 +9,10 @@
 - Update action [\#8](https://github.com/buluma/ansible-role-clamav/issues/8)
 - rebuild action [\#7](https://github.com/buluma/ansible-role-clamav/issues/7)
 
+**Merged pull requests:**
+
+- Bump actions/checkout from 4 to 6 [\#23](https://github.com/buluma/ansible-role-clamav/pull/23) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [24.3.31](https://github.com/buluma/ansible-role-clamav/tree/24.3.31) (2024-03-30)
 
 [Full Changelog](https://github.com/buluma/ansible-role-clamav/compare/0.4.0...24.3.31)
