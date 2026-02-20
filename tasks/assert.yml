@@ -1,5 +1,4 @@
 ---
-
 - name: assert | Test clamav_can_scan_system
   ansible.builtin.assert:
     that:
