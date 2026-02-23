@@ -12,29 +12,29 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 
 ```yaml
 ---
-  - name: Converge
-    hosts: all
-    become: true
-    gather_facts: true
+- name: Converge
+  hosts: all
+  become: true
+  gather_facts: true
 
-    roles:
-      - role: buluma.clamav
-        freshclam_private_mirrors:
-          - https://www.danami.com/hotfix/clamav
+  roles:
+  - role: buluma.clamav
+    freshclam_private_mirrors:
+    - https://www.danami.com/hotfix/clamav
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-clamav/blob/master/molecule/default/prepare.yml):
 
 ```yaml
 ---
-  - name: Prepare
-    hosts: all
-    gather_facts: false
-    become: true
+- name: Prepare
+  hosts: all
+  gather_facts: false
+  become: true
 
-    roles:
-      - role: buluma.bootstrap
-      - role: buluma.epel
+  roles:
+  - role: buluma.bootstrap
+  - role: buluma.epel
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
@@ -55,11 +55,11 @@ clamav_can_scan_system: true
 # contains the line that needs to be replaced. The replacement is stored in
 # "line".
 clamav_configuration:
-  - line: "Example"
-    state: absent
-  - line: "TCPSocket 10025"
-  - line: "TCPAddr 127.0.0.1"
-  - line: "LogFile /var/log/clamd.scan"
+- line: "Example"
+  state: absent
+- line: "TCPSocket 10025"
+- line: "TCPAddr 127.0.0.1"
+- line: "LogFile /var/log/clamd.scan"
 
 # If you have local clamav mirrors (as recommended by ClamAV),
 # you will also need to define a list variable with your mirrors to add,
