@@ -55,11 +55,11 @@ clamav_can_scan_system: true
 # contains the line that needs to be replaced. The replacement is stored in
 # "line".
 clamav_configuration:
-- line: "Example"
-  state: absent
-- line: "TCPSocket 10025"
-- line: "TCPAddr 127.0.0.1"
-- line: "LogFile /var/log/clamd.scan"
+  - line: "Example"
+    state: absent
+  - line: "TCPSocket 10025"
+  - line: "TCPAddr 127.0.0.1"
+  - line: "LogFile /var/log/clamd.scan"
 
 # If you have local clamav mirrors (as recommended by ClamAV),
 # you will also need to define a list variable with your mirrors to add,
