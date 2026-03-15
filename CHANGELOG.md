@@ -11,6 +11,7 @@
 
 **Merged pull requests:**
 
+- Bump docker/setup-buildx-action from 3 to 4 [\#24](https://github.com/buluma/ansible-role-clamav/pull/24) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump actions/checkout from 4 to 6 [\#23](https://github.com/buluma/ansible-role-clamav/pull/23) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [24.3.31](https://github.com/buluma/ansible-role-clamav/tree/24.3.31) (2024-03-30)
