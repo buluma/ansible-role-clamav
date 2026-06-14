@@ -18,8 +18,8 @@
 
 - name: Manage selinux settings
   when:
-    - ansible_facts.selinux is defined
-    - ansible_facts.selinux.status == "enabled"
+    - ansible_facts['selinux'] is defined
+    - ansible_facts['selinux'].status == "enabled"
   block:
     - name: Allowing system virus scanning
       ansible.posix.seboolean:
