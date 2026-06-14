@@ -73,6 +73,8 @@
     url: "{{ freshclam_private_mirrors[0] }}/{{ item }}"
     dest: "{{ clamav_database_directory }}/{{ item }}"
     mode: "0644"
+    headers:
+      User-Agent: "ClamAV/1.3.0"
   loop:
     - main.cvd
     - daily.cld

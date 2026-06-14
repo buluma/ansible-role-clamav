@@ -7,4 +7,4 @@
   roles:
     - role: buluma.clamav
       freshclam_private_mirrors:
-        - https://packages.clamav.net
+        - https://database.clamav.net
