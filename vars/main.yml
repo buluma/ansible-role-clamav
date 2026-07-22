@@ -4,6 +4,10 @@
 _clamav_packages:
   Alpine:
     - clamav-daemon
+  AlmaLinux:
+    - clamav
+    - clamav-update
+    - clamd
   Amazon-2018:
     - clamav-scanner
     - clamav-server
